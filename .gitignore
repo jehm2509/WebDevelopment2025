@@ -1,0 +1,15 @@
+
+# dependencies
+node_modules/
+package-lock.json
+
+*.orig.*
+
+
+# macOS
+.DS_Store
+*.pem
+._*
+
+#vs config
+/.vscode
