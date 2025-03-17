@@ -12,12 +12,12 @@ export const validateRequest =
 
                 const validatedToken = validateToken(request);
                 if (!validatedToken.success) {
-                    response.status(400).send({ message: 'Unauthorized!' });
+                    response.status(401).send({ message: 'Unauthorized!' });
                     return;
                 }
 
                 if (requireAdmin && validatedToken.role != ROLES[0]) {
-                    response.status(400).send({ message: 'Unauthorized!' });
+                    response.status(403).send({ message: 'Unauthorized!' });
                     return;
                 }
 

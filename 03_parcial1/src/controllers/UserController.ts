@@ -7,24 +7,50 @@ export function createUser(request: Request, response: Response) {
 
     let userParams = request.body;
 
-    // generate password
-    var salt = bcryptjs.genSaltSync();
-    userParams.password = bcryptjs.hashSync(userParams.password, salt);
 
-    const newUser = new User(userParams);
+    // validate if user already exist
 
-    newUser.save().then(
-        (userSaved) => {
-            response.status(200).send({
-                message: 'User created successfully'
-            });
+    let filters = {
+        username: userParams.username
+    }
+
+    User.findOne(filters).then(
+        (userFound) => {
+            if (userFound) {
+                response.status(401).send({ message: 'User already exist' });
+                return;
+            }
+
+            // generate password
+            var salt = bcryptjs.genSaltSync();
+            userParams.password = bcryptjs.hashSync(userParams.password, salt);
+
+            const newUser = new User(userParams);
+
+            newUser.save().then(
+                (userSaved) => {
+                    response.status(200).send({
+                        message: 'User created successfully'
+                    });
+                },
+                err => {
+                    response.status(500).send({
+                        message: 'An error ocurred while creating the user'
+                    });
+                }
+            );
+
         },
         err => {
-            response.status(500).send({
-                message: 'An error ocurred while creating the user'
-            });
+            response.status(500).send({ message: 'An error ocurred while create the user', error: err });
         }
     );
+
+
+
+
+
+
 }
 
 export function loginUser(request: Request, response: Response) {
@@ -38,7 +64,7 @@ export function loginUser(request: Request, response: Response) {
     User.findOne(filters).then(
         (userFound) => {
             if (userFound == null) {
-                response.status(401).send({ message: 'Invalid login data' });
+                response.status(400).send({ message: 'Invalid login data' });
                 return;
             }
 
@@ -53,7 +79,7 @@ export function loginUser(request: Request, response: Response) {
                     })
                 });
             } else {
-                response.status(401).send({
+                response.status(400).send({
                     message: 'Invalid login data'
                 });
             }

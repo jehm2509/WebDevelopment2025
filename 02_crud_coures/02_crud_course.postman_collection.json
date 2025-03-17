@@ -1,0 +1,378 @@
+{
+	"info": {
+		"_postman_id": "c93733a4-977c-4eb2-89d9-aa6edfdc4a1b",
+		"name": "02_crud_course",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30260586"
+	},
+	"item": [
+		{
+			"name": "courses",
+			"item": [
+				{
+					"name": "create_course",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"course with token\",\n    \"hour_duration\": 20,\n    \"price\": 750000\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/course",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"course"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit_course",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Course test edited\",\n    \"hour_duration\": 10,\n    \"price\": 5000000\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/course/67ae84145e482fa69110310e",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"course",
+								"67ae84145e482fa69110310e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete_course",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/course/67ae84145e482fa69110310e",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"course",
+								"67ae84145e482fa69110310e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get_course",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/course/67ae82fd5e482fa69110310c",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"course",
+								"67ae82fd5e482fa69110310c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get_courses_price",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/courses_eq_price/5000000",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"courses_eq_price",
+								"5000000"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get_courses_name_and_price",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/courses_name_and_price/e/500000",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"courses_name_and_price",
+								"e",
+								"500000"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get_courses_name_or_price",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/courses_name_or_price/a/500000",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"courses_name_or_price",
+								"a",
+								"500000"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get_courses",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/courses",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"courses"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "create_user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"System\",\n    \"last_name\": \"Administrator\",\n    \"email\": \"admin@localhost.com\",\n    \"password\" : \"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/user",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"admin@localhost.com\",\n    \"password\": \"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/login",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2N2QzNzc2MTBhZTdhMmY5YWU5NDY2OTIiLCJuYW1lIjoiYWRtaW5AbG9jYWxob3N0LmNvbSIsImlhdCI6MTc0MTkxMzI5NywiZXhwIjoxNzQxOTEzNDE3fQ.UPWKusQ982nl_--z0Fu07insjpT_ZtgQ3WzgTSgWSnA",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "http://localhost:4000",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2N2QzNzc2MTBhZTdhMmY5YWU5NDY2OTIiLCJuYW1lIjoiYWRtaW5AbG9jYWxob3N0LmNvbSIsImlhdCI6MTc0MTkxMzI5NywiZXhwIjoxNzQxOTEzNDE3fQ.UPWKusQ982nl_--z0Fu07insjpT_ZtgQ3WzgTSgWSnA",
+			"type": "string"
+		}
+	]
+}
