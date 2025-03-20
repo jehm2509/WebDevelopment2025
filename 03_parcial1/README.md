@@ -16,3 +16,6 @@ APIS Desarrolladas
 - POST  /api/product            => Permite crear un producto(title,description,price) y solo esta disponible para usuarios administradores logeados
 - GET   /api/products           => Permite listar los productos creados, pero requiere estar logeado
 - GET   /api/public_products    => Permite listar los productos creados, es publico y no requiere ningun login
+
+
+npm run dev
