@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat client</title>
+</head>
+
+<body>
+    <input type="text" id="txtMessage">
+    <div id="divMessages">
+    </div>
+
+
+    <script type="text/javascript">
+
+        const webSocket = new WebSocket('ws://localhost:9494');
+        const txtMessage = document.getElementById('txtMessage');
+        const divMessages = document.getElementById('divMessages');
+
+        txtMessage.addEventListener('keypress', sendMessage);
+
+        function sendMessage(event) {
+            if (event.code == "Enter") {
+                webSocket.send(txtMessage.value);
+                txtMessage.value = "";
+            }
+        }
+
+        webSocket.addEventListener('message', receiveMessage);
+
+        async function receiveMessage(event) {
+            let message = await event.data;
+            console.log(message);
+            divMessages.innerHTML = divMessages.innerHTML.concat('<p>' + message + '<p>');
+        }
+
+    </script>
+
+
+</body>
+
+</html>
