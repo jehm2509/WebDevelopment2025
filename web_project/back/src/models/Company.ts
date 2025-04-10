@@ -15,5 +15,5 @@ const CompanySchema = createSchemaWithSoftDelete<ICompany>({
     name: { type: String, required: true }
 });
 
-const User = mongoose.model<ICompanyDocument, ICompanyModel>('Company', CompanySchema);
-export default User;
+const Company = mongoose.model<ICompanyDocument, ICompanyModel>('Company', CompanySchema);
+export default Company;

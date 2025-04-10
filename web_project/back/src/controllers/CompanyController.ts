@@ -21,15 +21,37 @@ export function createCompany(request: Request, response: Response) {
     );
 }
 
+export function updateCompany(request: Request, response: Response) {
+
+    let companyParams = request.body;
+
+    let company = new Company(companyParams);
+
+    Company.findByIdAndUpdate(company._id, company, { new: true }).then(
+        (editedCompany) => {
+            response.status(200).send({
+                message: "Company was edited successfully",
+                company: editedCompany
+            });
+        },
+        (err) => {
+            response.status(500).send({
+                message: 'An error ocurred while editing the company',
+                error: err
+            });
+        }
+    );
+}
+
 export function deleteCompany(request: Request, response: Response) {
-    var companyId = request.params._id;
+    let companyId = request.params._id;
     Company.findById(companyId).then(
         (foundCompany) => {
             foundCompany?.softDelete();
             response.status(200).send({ message: "Company deleted!" });
         },
         err => {
-            response.status(500).send({ message: "Error getting course" });
+            response.status(500).send({ message: "Error deleting course" });
         }
     );
 }

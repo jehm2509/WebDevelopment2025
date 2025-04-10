@@ -46,3 +46,15 @@ export function validateToken(request: Request): ReturnValidatedToken {
         };
     }
 }
+
+type ReturnCompany = {
+    _id: string,
+    name: string
+}
+export function getCurrentCompany(request: Request): ReturnCompany{
+
+    return {
+        _id: "asdf",
+        name: "company"
+    };
+}
