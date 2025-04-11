@@ -1,0 +1,533 @@
+{
+	"info": {
+		"_postman_id": "6c88f486-8b8c-49aa-8dd6-b22d19df06e0",
+		"name": "web_project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30260586"
+	},
+	"item": [
+		{
+			"name": "company",
+			"item": [
+				{
+					"name": "create_company",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Test Company 3\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/company",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"company"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list_companies",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/companies",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"companies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete_company",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/company/67f7763076a09a3057d9fbdb",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"company",
+								"67f7763076a09a3057d9fbdb"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update company",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"67f7763876a09a3057d9fbde\",\r\n    \"name\": \"updated company\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/company",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"company"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "service_request",
+			"item": [
+				{
+					"name": "create_service_request",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"client_name\": \"Jhon Edison Huretado to delerte\",\r\n    \"client_email\": \"jhon@localhost.com\",\r\n    \"client_phone\": \"3012730001\",\r\n    \"date\": \"2025-04-11 10:00:00\",\r\n    \"service\": {\r\n        \"_id\": \"67f78db486dec065a2e28e4a\",\r\n        \"name\": \"Service 1\"\r\n    },\r\n    \"user\": {\r\n        \"_id\": \"67f77ff6708ed2b87d9cf601\",\r\n        \"name\": \"name\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/service_request",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"service_request"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list_service_requests",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/service_requests",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"service_requests"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete_service_request",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/service_request/67f7997d5c82dd8309bd34c5",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"service_request",
+								"67f7997d5c82dd8309bd34c5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update service_request",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"67f7763876a09a3057d9fbde\",\r\n    \"status\": \"accepted\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/service_request",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"service_request"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "service",
+			"item": [
+				{
+					"name": "create_service",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Service to delete\",\r\n    \"description\": \"Description service 1\",\r\n    \"duration\": 30,\r\n    \"users\": [\r\n        {\r\n            \"_id\": \"67f77ff6708ed2b87d9cf601\",\r\n            \"name\": \"name\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/service",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"service"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list_services",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/services",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"services"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete_service",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/service/67f78de686dec065a2e28e4d",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"service",
+								"67f78de686dec065a2e28e4d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update_service",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"67f78de686dec065a2e28e4d\",\r\n    \"name\": \"Service to delete edited\",\r\n    \"description\": \"Description service 1\",\r\n    \"duration\": 30,\r\n    \"users\": [\r\n        {\r\n            \"_id\": \"67f77ff6708ed2b87d9cf601\",\r\n            \"name\": \"name\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/service",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"service"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "create_user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"testtodelete@localhost.com\",\n    \"password\": \"123456\",\n    \"role\": \"company_user\" ,\n    \"company\": {        \n        \"_id\": \"67f7763876a09a3057d9fbde\",\n        \"name\": \"updated company\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/user",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login_user",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"testtodelete@localhost.com\",\n    \"password\": \"1234567\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/login",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update_user",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"67f77ff6708ed2b87d9cf601\",\r\n    \"username\": \"admin@localhost.com\",\r\n    \"password\": \"1234567\",\r\n    \"role\": \"administrator\"   \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/user",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list_users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/users",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete_user",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/user/67f85d7219bcacc5b4874fe7",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"67f85d7219bcacc5b4874fe7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "send_recovery_password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"testtodelete@localhost.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/forgot_password",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"forgot_password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "save_forgot_password",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"token\"   : \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRhIjoidGVzdHRvZGVsZXRlQGxvY2FsaG9zdC5jb20iLCJpYXQiOjE3NDQzMzAxNjAsImV4cCI6MTc0NDMzMzc2MH0.bw0p4FFM0QxQmGolPPvWn8fhN_mBieSML9PwqfBkkHs\",\r\n    \"new_password\": \"1234567\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/forgot_password",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"forgot_password"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "HealtCheck",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "localhost:4000",
+			"type": "string"
+		}
+	]
+}
