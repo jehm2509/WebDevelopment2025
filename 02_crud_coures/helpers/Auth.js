@@ -11,7 +11,7 @@ function generateToken(user) {
         sub: user._id,
         name: user.email,
         iat: moment().unix(),
-        exp: moment().add('2', 'minutes').unix()
+        exp: moment().add('2', 'hours').unix()
     }
 
     return jwt.encode(payload, secret);

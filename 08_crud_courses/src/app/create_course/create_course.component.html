@@ -1,0 +1,30 @@
+<div class="container-fluid">
+    <div class="row">
+        <label for="name" class="label col-md-2">Name</label>
+        <input class="form-control" id="name" [(ngModel)]="name" />
+    </div>
+    <div class="row">
+        <label for="name" class="label col-md-2">Hour duration</label>
+        <input class="form-control" id="name" [(ngModel)]="duration" />
+    </div>
+    <div class="row">
+        <label for="name" class="label col-md-2">Price</label>
+        <input class="form-control" id="name" [(ngModel)]="price" />
+    </div>
+
+    <div class="col-12 d-flex justify-content-center">
+        <button class="btn btn-primary" (click)="createCourse()">Save Course</button>
+        <button class="btn btn-secondary" (click)="goToHome()"> Return Home</button>
+    </div>
+
+    <div class="col-12 alert alert-success" role="alert" *ngIf="showSuccess">
+        El curso se ha creado correctamente
+    </div>
+
+    <div class="col-12 alert alert-danger" role="alert" *ngIf="showError">
+        Error. Verifique los datos ingresados
+    </div>
+
+
+
+</div>
