@@ -5,8 +5,11 @@ import userRoutes from '@/routes/UserRoutes';
 import companyRoutes from '@/routes/CompanyRoutes';
 import serviceRoutes from '@/routes/ServiceRoutes';
 import serviceRequestRoutes from '@/routes/ServiceRequestRoutes';
-
+import cors from 'cors';
 const app = express();
+
+// use cors
+app.use(cors());
 
 // Middlewares
 app.use(bodyParser.json());
