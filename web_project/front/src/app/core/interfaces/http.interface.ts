@@ -27,8 +27,10 @@ export interface IServiceRequest {
   date: string,
   service: {
     _id: string,
-    name: string
-  }
+    name: string,
+    duration: number
+  },
+  company_id: string,
   user: {
     _id: string,
     name: string

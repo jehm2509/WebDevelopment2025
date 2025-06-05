@@ -1,0 +1,26 @@
+<div class="d-flex justify-content-center align-items-center vh-100 bg-dark text-white">
+    <div class="bg-light card shadow p-4" style="width: 100%; max-width: 400px; ">
+        <div class="text-center mb-4 bg-dark" style="max-height: 250px;">
+            <img src="assets/logo.png" alt="MyContacts Logo" style="max-width: 300px;" />
+        </div>
+        <h4 class="mt-3 mb-0 mb-4  text-center">Log In</h4>
+
+        <form (ngSubmit)="login()">
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" [(ngModel)]="email" name="email" id="email" class="form-control" required />
+            </div>
+
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" [(ngModel)]="password" name="password" id="password" class="form-control"
+                    required />
+            </div>
+            <div *ngIf="error" class="alert alert-danger mt-3 text-center">{{ error }}</div>
+
+            <button class="btn btn-dark w-100" type="submit">Login</button>
+            <a routerLink="/{{ routes.AUTH_PATH }}/{{ routes.REGISTER }}"  class="btn btn-secondary mt-4 w-100 ">Register</a>
+        </form>
+
+    </div>
+</div>

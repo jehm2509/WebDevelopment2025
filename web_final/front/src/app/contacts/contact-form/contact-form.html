@@ -1,0 +1,32 @@
+
+<form (ngSubmit)="submitForm()" [formGroup]="form"  class="p-3 border rounded bg-light">
+
+  <div class="mb-3">    
+    <label class="form-label">First Name *</label>
+    <input class="form-control" formControlName="first_name" />
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Last Name *</label>
+    <input class="form-control" formControlName="last_name" />
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Email *</label>
+    <input class="form-control" type="email" formControlName="email" />
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Phone</label>
+    <input class="form-control" formControlName="phone" />
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Cellphone</label>
+    <input class="form-control" formControlName="cellphone" />
+  </div>
+
+  <button class="btn btn-dark" type="submit" [disabled]="form.invalid">
+    {{ contact ? 'Update' : 'Create' }} Contact
+  </button>
+</form>

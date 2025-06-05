@@ -1,0 +1,24 @@
+<div class="d-flex vh-100">
+    <!-- Sidebar -->
+    <nav class="bg-dark text-white d-flex flex-column p-3" style="width: 250px;">
+        <div class="mb-4">
+            <img src="assets/logo.png" alt="Logo" class="img-fluid" />
+        </div>
+
+        <ul class="nav nav-pills flex-column mb-auto">
+            <li class="nav-item mb-2">
+                <a routerLink="{{ routes.CONTACTS }}" routerLinkActive="active" class="nav-link text-white">Contacts</a>
+            </li>
+            
+        </ul>
+
+        <hr class="text-white" />
+
+        <button class="btn btn-secondary mt-auto" (click)="logout()">Logout</button>
+    </nav>
+
+    <!-- Main content -->
+    <main class="flex-grow-1 p-4 overflow-auto">
+        <router-outlet></router-outlet>
+    </main>
+</div>

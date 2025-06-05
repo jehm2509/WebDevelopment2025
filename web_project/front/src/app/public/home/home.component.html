@@ -9,7 +9,7 @@
     </div>
 
     <div class="row">
-        <div *ngFor="let company of companies_data" class="col-md-4 mb-3" (click)="loadCalendar(company._id)">
+        <div *ngFor="let company of companies_data" class="col-md-4 mb-3" (click)="loadCalendar(company._id)" role="button">
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">{{ company.name }}</h5>

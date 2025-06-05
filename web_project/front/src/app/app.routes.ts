@@ -11,9 +11,6 @@ export const appRoutes: Routes = [
     path: '',
     children: publicRoutes
   },
-//   {
-//     path: 'admin',
-//     loadChildren: () => import('./admin/admin.routes').then(m => m.adminRoutes)
-//   },
+
   { path: '**', redirectTo: '' }
 ];

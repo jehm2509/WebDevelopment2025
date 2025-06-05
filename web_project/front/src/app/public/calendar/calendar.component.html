@@ -1,1 +1,62 @@
-<p>calendar works!</p>
+
+<div class="container mt-4">
+
+    <button class="btn btn-secondary" (click)="goToHome()">Return </button>
+
+
+
+    <h2 class="mb-4">Calendario de solicitudes</h2>
+
+    <div [ngSwitch]="view">
+    <mwl-calendar-week-view
+        [viewDate]="viewDate"
+        [events]="events"
+        [hourSegments]="2"
+        [dayStartHour]="8"
+        [dayEndHour]="20"
+        (hourSegmentClicked)="onHourSegmentClicked($event)">
+    </mwl-calendar-week-view>
+        
+    </div>
+</div>
+
+<div *ngIf="showFormModal" class="modal fade show d-block" tabindex="-1" style="background: rgba(0,0,0,0.5);">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Solicitar cita</h5>
+        <button type="button" class="btn-close" (click)="closeModal()"></button>
+      </div>
+      <div class="modal-body">
+        <form (ngSubmit)="createEvent()">
+
+            <div>
+                Solicitar sita para el dia: {{ formated_date }}
+            </div>
+
+            <div class="mb-3 row">
+              <label class="form-label col-md-3">Service</label>
+              <select class="form-control" >
+                <option  *ngFor="let service of services">{{ service.name }}</option>
+              </select>
+            </div>
+          <div class="mb-3 row">
+            <label class="form-label col-md-3">Name</label>
+            <input class="form-control col-md-6" [(ngModel)]="client_name" name="client_name" required />
+          </div>
+          <div class="mb-3 row">
+            <label class="form-label col-md-3">Email</label>
+            <input class="form-control col-md-6" [(ngModel)]="client_email" name="client_email" required />
+          </div>
+          <div class="mb-3 row">
+            <label class="form-label col-md-3">Phone</label>
+            <input class="form-control col-md-6" [(ngModel)]="client_phone" name="client_phone" required />
+          </div>
+          <button class="btn btn-primary" type="submit">Save</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
