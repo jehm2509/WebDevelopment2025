@@ -15,7 +15,7 @@ export function generateToken(user: UserParamType) {
         sub: user.id,
         name: user.username,
         iat: moment().unix(),
-        exp: moment().add('10', 'minutes').unix()
+        exp: moment().add('5', 'minutes').unix()
     }
 
     return encode(payload, jwt_secret_key);
